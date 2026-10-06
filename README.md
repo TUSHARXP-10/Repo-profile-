@@ -16,7 +16,6 @@
 <br>
 
 <h3><code>tushar@github ~ $ ./links.sh</code></h3>
-<a href="https://github.com/TUSHARXP-10"><code>github</code></a> ·
-<a href="mailto:xpianochess@gmail.com"><code>email</code></a>
+<a href="https://github.com/TUSHARXP-10"><code>github</code></a>
 
 </div>
