@@ -1,0 +1,22 @@
+{
+  "github_user": "TUSHARXP-10",
+  "name": "Tushar",
+  "host": "github",
+  "photo": "assets/photo.jpg",
+  "ascii_width": 64,
+  "ascii_invert": false,
+  "info": [
+    ["OS", "Linux / macOS / whatever compiles"],
+    ["Role", "Software Developer"],
+    ["Location", "India"],
+    ["Languages", "Python, JavaScript, TypeScript, C++"],
+    ["Frameworks", "React, Node.js, FastAPI"],
+    ["Tools", "Git, Docker, Linux, VS Code"],
+    ["Interests", "Open source, chess, piano"],
+    ["Currently", "Building cool things"]
+  ],
+  "contact": [
+    ["GitHub", "github.com/TUSHARXP-10"],
+    ["Email", "you@example.com"]
+  ]
+}

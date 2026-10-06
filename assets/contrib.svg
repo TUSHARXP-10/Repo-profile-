@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="69" height="184" viewBox="0 0 69 184">
+<rect width="69" height="184" rx="10" fill="#0d1117" stroke="#30363d"/>
+<g font-family="'JetBrains Mono','Fira Code',Consolas,'Courier New',monospace">
+<text x="24" y="24" fill="#c9d1d9" font-size="14" font-weight="bold">0 contributions in the last year · @TUSHARXP-10</text>
+<g fill="#8b949e" font-size="9"><text x="10" y="69">Mon</text><text x="10" y="97">Wed</text><text x="10" y="125">Fri</text>
+<text x="-87" y="167">Less</text><text x="15" y="167">More</text></g>
+
+<rect x="-57" y="158" width="11" height="11" rx="2" fill="#161b22"/><rect x="-43" y="158" width="11" height="11" rx="2" fill="#0e4429"/><rect x="-29" y="158" width="11" height="11" rx="2" fill="#006d32"/><rect x="-15" y="158" width="11" height="11" rx="2" fill="#26a641"/><rect x="-1" y="158" width="11" height="11" rx="2" fill="#39d353"/>
+</g>
+</svg>
