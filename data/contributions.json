@@ -3,8 +3,19 @@
  "fetched_at": null,
  "stats": {
   "total": 0,
-  "current_streak": 0,
-  "longest_streak": 0,
+  "active_days": 0,
+  "days": 367,
+  "avg_per_active_day": 0,
+  "current_streak": {
+   "days": 0,
+   "start": null,
+   "end": null
+  },
+  "longest_streak": {
+   "days": 0,
+   "start": null,
+   "end": null
+  },
   "best_day": {
    "date": "2025-10-05",
    "count": 0

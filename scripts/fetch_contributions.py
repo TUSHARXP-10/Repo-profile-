@@ -48,31 +48,42 @@ def fetch_days(user):
     return days
 
 
+def _streaks(past):
+    """Return (current, longest), each as (length, start_date, end_date)."""
+    runs, start = [], None
+    for i, d in enumerate(past):
+        if d["count"] and start is None:
+            start = i
+        if start is not None and (not d["count"] or i == len(past) - 1):
+            stop = i if d["count"] else i - 1
+            runs.append((stop - start + 1, past[start]["date"], past[stop]["date"]))
+            start = None
+    longest = max(runs, default=(0, None, None))
+    current = (0, None, None)
+    # today with no contributions yet doesn't break a streak that ran through yesterday
+    alive = {d["date"] for d in past[-2:]} if past and not past[-1]["count"] else {d["date"] for d in past[-1:]}
+    if runs and runs[-1][2] in alive:
+        current = runs[-1]
+    return current, longest
+
+
 def stats(days):
     today = dt.date.today().isoformat()
     past = [d for d in days if d["date"] <= today]
-
-    longest = run = 0
-    for d in past:
-        run = run + 1 if d["count"] else 0
-        longest = max(longest, run)
-
-    current = 0
-    for i, d in enumerate(reversed(past)):
-        if d["count"]:
-            current += 1
-        elif i > 0:  # today with zero doesn't break the streak yet
-            break
-
+    total = sum(d["count"] for d in past)
+    active = sum(1 for d in past if d["count"])
+    current, longest = _streaks(past)
     best = max(past, key=lambda d: d["count"]) if past else {"date": None, "count": 0}
     monthly = OrderedDict()
     for d in past:
         monthly[d["date"][:7]] = monthly.get(d["date"][:7], 0) + d["count"]
-
     return {
-        "total": sum(d["count"] for d in past),
-        "current_streak": current,
-        "longest_streak": longest,
+        "total": total,
+        "active_days": active,
+        "days": len(past),
+        "avg_per_active_day": round(total / active, 1) if active else 0,
+        "current_streak": {"days": current[0], "start": current[1], "end": current[2]},
+        "longest_streak": {"days": longest[0], "start": longest[1], "end": longest[2]},
         "best_day": {"date": best["date"], "count": best["count"]},
         "monthly": monthly,
     }
